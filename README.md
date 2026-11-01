@@ -78,35 +78,6 @@ how-app-coded-module.zip
 | **3. Archive Central Directory Scan** | `unzip -l <apk_paths>` | Counts `.dex` files, enumerates `lib/<abi>/*.so` binaries with sizes, measures payload distribution (`dex`, `lib`, `res`, `assets`, `META-INF`), and matches framework file markers. |
 | **4. Deep DEX Signature Scan (Optional)** | `unzip -p base.apk classes.dex \| strings -n 6 \| grep -E ...` | Identifies obfuscated/embedded SDKs, DI frameworks, coroutines, Compose, and ad/analytics trackers inside `classes.dex`. |
 
-## Publishing to GitHub (Quick Guide for HmnDev-Tech)
-
-To publish this repository and release on GitHub under `HmnDev-Tech`:
-
-```bash
-# 1. Unpack the archive into a new repository folder
-mkdir how-app-coded && cd how-app-coded
-unzip ../how-app-coded-module.zip
-
-# 2. Initialize Git and verify your private GitHub noreply identity
-git init
-git branch -M main
-git config user.name "HmnDev-Tech"
-# Replace <id> with your GitHub numeric user ID from: gh api user --jq '"\(.id)+\(.login)@users.noreply.github.com"'
-git config user.email "<id>+HmnDev-Tech@users.noreply.github.com"
-
-# 3. Stage module files explicitly and create the initial commit
-git add module.prop banner.png action.sh service.sh README.md CHANGELOG.md LICENSE .gitignore webui/index.html webui/styles.css webui/app.js webui/banner.jpg
-git commit -m "feat(module): initial release of HowAppCoded v1.1.0"
-
-# 4. Create the GitHub repository and push
-gh repo create HmnDev-Tech/how-app-coded --public --source=. --remote=origin --push
-
-# 5. Publish v1.1.0 release with the installable module ZIP attached
-gh release create v1.1.0 ../how-app-coded-module.zip \
-  --title "HowAppCoded? v1.1.0" \
-  --notes-file CHANGELOG.md
-```
-
 ## License
 
 Released under the MIT License. Copyright (c) 2026 HmnDev-Tech.

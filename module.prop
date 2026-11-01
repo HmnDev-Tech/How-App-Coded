@@ -1,0 +1,10 @@
+id=how-app-coded
+name=HowAppCoded?
+version=1.1.0
+versionCode=110
+author=HmnDev-Tech
+description=Inspect installed Android apps via Shizuku ADB to uncover their tech stack (.kt, .java, .cpp, Flutter, RN, Compose, Unity), audit code quality, and evaluate utility vs bloat.
+banner=banner.png
+webui=webui
+action=action.sh
+usesShellBridge=true

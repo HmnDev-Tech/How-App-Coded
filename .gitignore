@@ -1,0 +1,9 @@
+# Shizuku runtime logs & cache
+logs/
+cache/
+config.json
+disable
+webui/vendor/beer.min.css
+webui/vendor/beer.min.js
+.DS_Store
+*.log

@@ -8,7 +8,7 @@
 
 * **Author:** HmnDev-Tech
 * **Module ID:** `how-app-coded`
-* **Version:** `1.1.0` (`versionCode=110`)
+* **Version:** ...
 * **Target Runtime:** Shizuku ADB Modules API (`usesShellBridge=true`)
 * **License:** MIT
 
